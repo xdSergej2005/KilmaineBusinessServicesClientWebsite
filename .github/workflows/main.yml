@@ -1,0 +1,24 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build-test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Check HTML files exist
+      run: |
+        test -f index.html
+        test -f login.html
+        test -f dashboard.html
+        test -f settings.html
+
+    - name: Basic content test
+      run: |
+        grep "<html" index.html
