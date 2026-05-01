@@ -16,7 +16,7 @@ jobs:
       run: |
         test -f index.html
         test -f login.html
-        test -f dashboard.html
+        test -f userdashboard.html
         test -f settings.html
 
     - name: Basic content test
